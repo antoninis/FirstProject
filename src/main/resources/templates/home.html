@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal" href="#">Добро пожаловать!</h5>
+    </div>
+    <form action="/" method="post">
+            <div class="col-md-7 mb-3">
+                <label>Выберите задачу</label><br>
+                <small class="text-muted">
+                    Задача №1<br>
+                    Given two arrays of strings a1 and a2 return a sorted array r in lexicographical
+                    order of the strings of a1 which are substrings of strings of a2.
+                    <p></p>
+                    Задача №2<br>
+                    Write Number in Expanded Form<br>
+                    You will be given a number and you will need to return it as a string in Expanded Form.
+                </small>
+                <select name="action" class="custom-select d-block w-100">
+                    <option value="">Выберите...</option>
+                    <option>Задача №1</option>
+                    <option>Задача №2</option>
+                </select>
+            </div>
+
+            <div class="col-md-7 mb-3">
+                <label> Ввод </label>
+                <input name="a1" type="text" placeholder="Введите данные 1" class="form-control">
+                <input name="a2" type="text" placeholder="Введите данные 2" class="form-control">
+                <small class="text-muted"> Поле ввода переменных для задач</small>
+
+            </div>
+
+            <div class="col-md-7 mb-3">
+                <label> Вывод</label>
+                <p th:text="${act}" class="text-muted"></p>
+                <output th:text="${Exercise}" type="text" class="form-control">
+                </output>
+            </div>
+
+            <div class="col-md-7 mb-3 text-center">
+                <button type="submit" class="btn btn-lg btn-block btn-outline-primary">Посчитать</button>
+                <button type="button" class="btn btn-lg btn-block btn-outline-primary">Сохранить</button>
+                <br />
+
+                <form method="POST" enctype="multipart/form-data" action="/upload">
+                    Выберите файл для загрузки: <input type="file" name="file"><br/>
+                    <br/>
+                    <button type="submit" value="Upload" class="btn btn-lg btn-block btn-outline-primary">Загрузить</button>
+
+                </form>
+
+            </div>
+    </form>
+</body>
+</html>
